@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waseem Hassan - Health & Fitness Coach App</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 50px;
+            padding: 50px 0;
+        }
+        
+        .header h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 20px 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .card h2 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.8rem;
+        }
+        
+        .card p {
+            margin-bottom: 15px;
+            color: #666;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .feature {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .feature h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #FF6B6B, #4ECDC4);
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            margin: 20px 10px;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .tech-stack {
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            color: white;
+        }
+        
+        .tech-stack h3 {
+            margin-bottom: 15px;
+        }
+        
+        .tech-item {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 5px 15px;
+            margin: 5px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+        
+        .footer {
+            text-align: center;
+            color: white;
+            margin-top: 50px;
+            padding: 20px 0;
+            opacity: 0.8;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .container {
+                padding: 10px;
+            }
+            
+            .card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🏋️‍♂️ Health & Fitness Coach</h1>
+            <p>AI-Powered Personal Health and Fitness Assistant</p>
+        </div>
+        
+        <div class="card">
+            <h2>🎯 About This Application</h2>
+            <p>Welcome to the Health and Fitness Coach - an intelligent virtual assistant designed to support users on their fitness and weight loss journey. This app offers personalized workout plans, diet recommendations, progress tracking, and milestone achievements to guide users toward their health goals.</p>
+            
+            <div style="text-align: center; margin: 30px 0;">
+                <a href="#" class="cta-button" onclick="alert('App deployment in progress! Check back soon for the live demo.')">🚀 Launch App</a>
+                <a href="https://github.com/Waseem771/Waseem7711-Health_Fitness_Coach_App" class="cta-button">📱 View Source Code</a>
+            </div>
+        </div>
+        
+        <div class="features">
+            <div class="feature">
+                <h3>🥗 Personalized Diet Plans</h3>
+                <p>Generate meal plans tailored to individual fitness goals and dietary preferences (Keto, Vegetarian, Balanced).</p>
+            </div>
+            
+            <div class="feature">
+                <h3>🏆 Milestone Achievement Tracker</h3>
+                <p>Track significant milestones like target weights or fitness achievements with motivation and progress feedback.</p>
+            </div>
+            
+            <div class="feature">
+                <h3>🎯 Goal Refinement</h3>
+                <p>AI suggests adjustments to routines, diet, or goals to enhance success when progress stalls.</p>
+            </div>
+        </div>
+        
+        <div class="tech-stack">
+            <h3>🛠️ Technology Stack</h3>
+            <span class="tech-item">Streamlit</span>
+            <span class="tech-item">Python</span>
+            <span class="tech-item">Session State Management</span>
+            <span class="tech-item">Interactive UI</span>
+            <span class="tech-item">Data Analytics</span>
+        </div>
+        
+        <div class="card">
+            <h2>🚀 Deployment Options</h2>
+            <p>This application can be deployed on multiple platforms:</p>
+            <ul style="margin-left: 20px; margin-top: 10px;">
+                <li><strong>Streamlit Cloud:</strong> Easy one-click deployment from GitHub</li>
+                <li><strong>Heroku:</strong> Configured with Procfile and runtime.txt</li>
+                <li><strong>Docker:</strong> Containerized deployment with Dockerfile</li>
+                <li><strong>Local Development:</strong> Run with <code>streamlit run app.py</code></li>
+            </ul>
+        </div>
+        
+        <div class="card">
+            <h2>📝 How to Use</h2>
+            <ol style="margin-left: 20px;">
+                <li>Enter your name and select your fitness goal</li>
+                <li>Choose your diet preference (Balanced, Keto, or Vegetarian)</li>
+                <li>Generate your personalized diet plan</li>
+                <li>Set weight loss milestones and track progress</li>
+                <li>Get AI-powered recommendations for goal refinement</li>
+            </ol>
+        </div>
+        
+        <div class="footer">
+            <p>© 2024 Waseem Hassan - Health & Fitness Coach App | Built with ❤️ using Streamlit</p>
+        </div>
+    </div>
+</body>
+</html>

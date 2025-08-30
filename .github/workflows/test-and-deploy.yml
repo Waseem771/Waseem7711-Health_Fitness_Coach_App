@@ -1,0 +1,57 @@
+name: Deploy Streamlit App
+
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Set up Python 3.9
+      uses: actions/setup-python@v4
+      with:
+        python-version: 3.9
+    
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    
+    - name: Test app syntax
+      run: |
+        python -m py_compile app.py
+        echo "App syntax is valid!"
+    
+    - name: Test Streamlit app
+      run: |
+        echo "Testing Streamlit app structure..."
+        python -c "
+        import streamlit as st
+        print('Streamlit import successful')
+        # Basic validation that the app file is structured correctly
+        with open('app.py', 'r') as f:
+            content = f.read()
+            assert 'def app():' in content, 'Main app function not found'
+            assert 'streamlit' in content, 'Streamlit not imported'
+            print('App structure validation passed!')
+        "
+    
+  deploy-info:
+    needs: test
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Deployment Instructions
+      run: |
+        echo "🚀 Streamlit App Deployment Options:"
+        echo "1. Streamlit Cloud: Connect your GitHub repo at https://share.streamlit.io/"
+        echo "2. Heroku: Use the included Procfile and runtime.txt"
+        echo "3. Docker: Build with 'docker build -t fitness-app .'"
+        echo "4. Local: Run 'streamlit run app.py'"
+        echo ""
+        echo "✅ All tests passed! App is ready for deployment."
